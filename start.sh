@@ -25,22 +25,11 @@ sudo apt-get upgrade -y
 # Check if Python3 is installed
 if ! command -v python3 &> /dev/null
 then
-    echo "Python 3 is not installed. Installing Python 3..."
-    sudo apt-get install python3 python3-pip -y
+    echo "ERROR: Python 3 is not installed"
 else
     echo "Python 3 is already installed."
 fi
 
-
-
-# Install git
-sudo apt-get install git -y
-
-# # Clone your application repository from GitHub
-# git clone <github-repo-url>
-
-# # Navigate to the application directory
-# cd <app-directory>
 
 # Run the server
 python3 server.py &
