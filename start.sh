@@ -32,9 +32,9 @@ fi
 
 
 # Run the server
-python3 server.py &
+python3 src/server.py &
 
 sleep 2
 
 # Run the client and opt in to server logs
-python3 clients.py > /dev/null 2>&1 &
+python3 src/clients.py > /dev/null 2>&1 &

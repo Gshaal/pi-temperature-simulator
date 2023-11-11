@@ -1,3 +1,5 @@
 Sensor1_log.txt
 Sensor2_log.txt
 Sensor3_log.txt
+__pycache__
+tests/__pycache__

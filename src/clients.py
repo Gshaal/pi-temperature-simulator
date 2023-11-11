@@ -27,7 +27,6 @@ def generateCleintResponse(min_temp=-10, max_temp=40):
 if __name__ == '__main__':
     client_threads = []
     for sensor_id in SENSOR_IDS:
-        print("sdd")
         thread = threading.Thread(target=client, args=(sensor_id,))
         thread.start()
         client_threads.append(thread)
