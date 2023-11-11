@@ -1,41 +1,32 @@
 # Find the process ID of the server script
-PID=$(ps aux | grep 'server.py' | grep -v grep | awk '{print $2}')
+SERVER_PID=$(ps aux | grep 'server.py' | grep -v grep | awk '{print $2}')
 
 # Find the process ID of the client script
-PID2=$(ps aux | grep 'clients.py' | grep -v grep | awk '{print $2}')
-
-PID3=$(ps aux | grep 'server_spec.py' | grep -v grep | awk '{print $2}')
+CLIENT_PID=$(ps aux | grep 'clients.py' | grep -v grep | awk '{print $2}')
 
 
 
-# Check if the PID is found
-if [ -z "$PID" ]; then
+
+
+# Check if the SERVER_PID is found
+if [ -z "$SERVER_PID" ]; then
     echo "Server is not running."
     echo
 else
     # Kill the server process
-    kill $PID
+    kill $SERVER_PID
     echo "Server stopped."
     
 fi
 
-# Check if the PID is found
-if [ -z "$PID2" ]; then
+# Check if the CLIENT_PID is found
+if [ -z "$CLIENT_PID" ]; then
     echo "client is not running."
     echo
 else
-    # Kill the server process
-    kill $PID2
+    # Kill the client process
+    kill $CLIENT_PID
     echo "client stopped."
     
 fi
 
-if [ -z "$PID3" ]; then
-    echo "client2 is not running."
-    echo
-else
-    # Kill the server process
-    kill $PID3
-    echo "client2 stopped."
-    
-fi
