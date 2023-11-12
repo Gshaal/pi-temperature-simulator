@@ -9,14 +9,8 @@ echo "SERVER_PORT is set to: $SERVER_PORT"
 # Find the process ID of the server script
 PID=$(ps aux | grep 'server.py' | grep -v grep | awk '{print $2}')
 
-# Check if the PID is found
-if [ -z "$PID" ]; then
-    echo "Server is not running."
-else
-    # Kill the server process
-    kill $PID
-    echo "Server stopped."
-fi
+# stop prev processes
+bash ./stop.sh
 
 # Update package list and upgrade existing packages
 sudo apt-get update
